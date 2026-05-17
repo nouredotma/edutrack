@@ -7,7 +7,7 @@ use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::redirect('/about', '/')->name('about');
 
 Route::get('/dashboard', function () {
     return redirect()->route('students.index');
